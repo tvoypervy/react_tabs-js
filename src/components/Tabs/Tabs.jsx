@@ -4,6 +4,10 @@ export const Tabs = ({ tabs, onTabSelected, activeTabId }) => {
   let activeTab = tabs.find(x => x.id === activeTabId);
   let activeId = activeTabId;
 
+  if (!tabs || tabs.length) {
+    return null;
+  }
+
   if (!activeTab) {
     [activeTab] = tabs;
     activeId = activeTab.id;
